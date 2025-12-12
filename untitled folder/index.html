@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deadlock Prevention & Recovery Toolkit - Neon Edition</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- We will inject CSS in Part 2 -->
+<style>
+/* CSS COMES IN PART 2 */
+</style>
+</head>
+
+<body class="dark">
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <h1>Deadlock Prevention & Recovery Toolkit</h1>
+
+    <button class="themeToggle" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span>
+    </button>
+</header>
+
+<!-- ================= TAB NAVIGATION ================= -->
+<nav class="tabs">
+    <button class="tabBtn active" onclick="openTab('inputTab', this)">Input</button>
+    <button class="tabBtn" onclick="openTab('bankerTab', this)">Banker's Algorithm</button>
+    <button class="tabBtn" onclick="openTab('detectTab', this)">Deadlock Detection</button>
+    <button class="tabBtn" onclick="openTab('preventTab', this)">Prevention</button>
+    <button class="tabBtn" onclick="openTab('recoverTab', this)">Recovery</button>
+    <button class="tabBtn" onclick="openTab('ragTab', this)">RAG Visualization</button>
+</nav>
+
+<!-- ================= CONTENT AREA ================= -->
+<div class="content">
+
+    <!-- ========== INPUT TAB ========== -->
+    <section id="inputTab" class="tabContent active">
+        <h2>System Input</h2>
+
+        <div class="box">
+            <label>Number of Processes</label>
+            <input id="procCount" type="number" min="1">
+
+            <label>Number of Resources</label>
+            <input id="resCount" type="number" min="1">
+
+            <button onclick="generateTables()">Generate Tables</button>
+        </div>
+
+        <div id="inputTables"></div>
+
+        <button onclick="saveData()" class="runBtn">Save Data</button>
+    </section>
+
+
+    <!-- ========== BANKER'S TAB ========== -->
+    <section id="bankerTab" class="tabContent">
+        <h2>Banker's Algorithm - Safety Check</h2>
+        <button onclick="runBanker()" class="runBtn">Run Banker's Algorithm</button>
+        <div id="bankerResult"></div>
+    </section>
+
+
+    <!-- ========== DEADLOCK DETECTION TAB ========== -->
+    <section id="detectTab" class="tabContent">
+        <h2>Deadlock Detection</h2>
+        <button onclick="runDetection()" class="runBtn">Run Detection Algorithm</button>
+        <div id="detectResult"></div>
+    </section>
+
+
+    <!-- ========== DEADLOCK PREVENTION TAB ========== -->
+    <section id="preventTab" class="tabContent">
+        <h2>Prevention Techniques</h2>
+
+        <div class="box">
+            <h3>Four Conditions of Deadlock</h3>
+            <ul>
+                <li>Mutual Exclusion</li>
+                <li>Hold and Wait</li>
+                <li>No Preemption</li>
+                <li>Circular Wait</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h3>Preventive Methods</h3>
+            <ul id="preventList">
+                <li>Eliminate Mutual Exclusion (Not always possible)</li>
+                <li>Avoid Hold and Wait (Request all resources at once)</li>
+                <li>Allow Preemption (Forcefully take resources)</li>
+                <li>Break Circular Wait (Ordering resources)</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- ========== RECOVERY TAB ========== -->
+    <section id="recoverTab" class="tabContent">
+        <h2>Deadlock Recovery</h2>
+
+        <button onclick="recoverTerminate()" class="runBtn">Terminate a Process</button>
+        <button onclick="recoverPreempt()" class="runBtn">Preempt Resources</button>
+
+        <div id="recoverResult"></div>
+    </section>
+
+
+    <!-- ========== RAG TAB ========== -->
+    <section id="ragTab" class="tabContent">
+        <h2>Resource Allocation Graph (RAG)</h2>
+
+        <canvas id="ragCanvas" width="600" height="400"></canvas>
+
+        <button onclick="drawRAG()" class="runBtn">Draw Graph</button>
+        <div id="ragInfo"></div>
+    </section>
+
+</div>
+
+<!-- JS COMES IN PART 3 -->
+<script>
+</script>
+
+</body>
+</html>

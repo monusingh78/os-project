@@ -1,0 +1,205 @@
+/* ================= THEME COLORS ================= */
+:root {
+    --bg-dark: #020d0f;
+    --bg-light: #f5ffff;
+
+    --text-dark: #eafffa;
+    --text-light: #003b3b;
+
+    --neon1: #00f5ff;
+    --neon2: #00ff95;
+    --glass: rgba(0,255,200,0.08);
+}
+
+/* ================= GLOBAL ================= */
+body {
+    transition: 0.4s ease;
+}
+
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.light {
+    background: var(--bg-light);
+    color: var(--text-light);
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+body.dark .header {
+    background: rgba(0,255,200,0.12);
+    box-shadow: 0 0 20px rgba(0,255,200,0.25);
+}
+
+body.light .header {
+    background: white;
+    border: 1px solid #c6fff5;
+}
+
+/* Theme Toggle Button */
+.themeToggle {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--neon1), var(--neon2));
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 0 15px var(--neon1);
+}
+.themeToggle:hover {
+    box-shadow: 0 0 25px var(--neon2);
+}
+
+/* ================= TAB NAVIGATION ================= */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tabBtn {
+    padding: 12px 20px;
+    background: transparent;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 2px solid var(--neon1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+body.dark .tabBtn {
+    color: var(--neon1);
+}
+
+body.light .tabBtn {
+    color: #007b7b;
+}
+
+.tabBtn.active {
+    background: linear-gradient(135deg, var(--neon1), var(--neon2));
+    color: black !important;
+    box-shadow: 0 0 20px var(--neon1);
+    border: none;
+}
+
+/* ================= CONTENT AREA ================= */
+.content {
+    margin-top: 20px;
+}
+
+.tabContent {
+    display: none;
+}
+.tabContent.active {
+    display: block;
+}
+
+/* ================= BOX ================= */
+.box {
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+body.dark .box {
+    background: var(--glass);
+    border: 1px solid rgba(0,255,200,0.25);
+    box-shadow: 0 0 15px rgba(0,255,200,0.3);
+}
+
+body.light .box {
+    background: white;
+    border: 1px solid #d9fef7;
+}
+
+/* ================= INPUTS ================= */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    font-size: 15px;
+}
+
+body.dark input, body.dark select {
+    background: rgba(0,255,200,0.08);
+    border: 1px solid rgba(0,255,200,0.3);
+    color: var(--text-dark);
+}
+
+body.light input, body.light select {
+    background: white;
+    border: 1px solid #8cffeb;
+    color: black;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    cursor: pointer;
+}
+
+.runBtn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--neon1), var(--neon2));
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 0 20px var(--neon1);
+}
+.runBtn:hover {
+    box-shadow: 0 0 30px var(--neon2);
+    transform: translateY(-2px);
+}
+
+/* ================= TABLES ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+body.dark th {
+    background: rgba(0,255,200,0.25);
+}
+body.dark td {
+    background: rgba(0,255,200,0.08);
+}
+
+body.light th {
+    background: #baffef;
+}
+body.light td {
+    background: #e7fffa;
+}
+
+/* ================= RAG CANVAS ================= */
+#ragCanvas {
+    width: 100%;
+    background: rgba(0,255,200,0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--neon1);
+}
